@@ -2,6 +2,7 @@ import React from 'react';
 import CustomAccordion from '@/components/accordion-item';
 import seoContent from '@/lib/seo-content';
 import TwitterButton from '@/components/twitter-button';
+
 const Footer = () => {
   return (
     <footer className="w-full flex flex-col items-center justify-center py-8 bg-slate-100 dark:bg-gray-800 dark:text-white">

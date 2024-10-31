@@ -1,6 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import DataGenerator from "@/components/data-generator";
 
 export default function Home() {
