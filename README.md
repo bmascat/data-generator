@@ -1,4 +1,4 @@
-# Data Generator App
+# Data Generator
 
 ![Data Generator App](./docs/app_preview.png)
 
