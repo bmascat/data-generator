@@ -46,6 +46,7 @@ jobs:
             ${{ env.DOCKER_HUB_REPOSITORY }}
             ghcr.io/${{ env.GITHUB_REPOSITORY }}
           tags: |
+            type=raw,value=latest,enable={{is_default_branch}}
             type=ref,event=branch
             type=ref,event=pr
             type=semver,pattern={{version}}
@@ -64,10 +65,6 @@ jobs:
   deploy:
       needs: build-and-push
       runs-on: ubuntu-latest
-      if: github.ref == 'refs/heads/main'
       steps:
         - name: Deploy to Render
-          uses: johnbeynon/render-deploy-action@v0.0.8
-          with:
-            service-id: ${{ secrets.RENDER_NAME_ID }}
-            api-key: ${{ secrets.RENDER_API_KEY }}
+          run: curl ${{ secrets.RENDER_DEPLOY_HOOK }}
