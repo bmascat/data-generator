@@ -57,6 +57,7 @@ jobs:
   deploy:
       needs: build-and-push
       runs-on: ubuntu-latest
+      if: github.event_name != 'pull_request'
       steps:
         - name: Deploy to Render
           run: curl ${{ secrets.RENDER_DEPLOY_HOOK }}
